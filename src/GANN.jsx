@@ -1,30 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const GANN = () => {
-  const friend1 = 'ramesh';
-  const friend2 = 'arjun';
-  const friend3 = 'vishal';
+    const arr=[1,2,3,4,5,6,7,8]
 
-  console.log(friend1);
+const [ok,setok]=useState('')
+const [ok1,setok1]=useState()
 
-  const allFriends = ['ramesh', 'suresh', 'ganesh', 1, 2, 3, 4];
+const hello=()=>{
 
-  for (let ele of allFriends) {
-    console.log(ele);
-  }
+let nummm=parseInt(ok)
 
-
-allFriends.forEach(element => {
-    console.log(element);
-});
-
-console.log(allFriends.indexOf("ramesh",2));
-console.log(allFriends.indexOf("suresh",0));
-
+    if(arr.includes(nummm)) console.log(ok)}
 
   return (
     <div>
-      <p>Check the console for output</p>
+
+<input type="text"  onChange={(e)=>{setok(e.target.value)}}  value={ok}  />
+
+      <button onClick={hello}>click</button>
     </div>
   );
 };
