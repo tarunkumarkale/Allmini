@@ -1,25 +1,58 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
 const GANN = () => {
-    const arr=[1,2,3,4,5,6,7,8]
 
-const [ok,setok]=useState('')
-const [ok1,setok1]=useState()
+const obj={
+  fname:'',
+  lname:''
+  }
 
-const hello=()=>{
 
-let nummm=parseInt(ok)
+const [ok,setok]=useState(obj)
+const [o,seto]=useState([])
 
-    if(arr.includes(nummm)) console.log(ok)}
+
+const fun=(e)=>{
+  let name=e.target.name
+  let value=e.target.value
+
+  setok((pre)=>{
+   if(name==='name'){
+  return {
+    fname:value,
+  lname:pre.lname
+  }
+
+   } else {
+    return{
+      fname:pre.fname,
+      lname:value
+    }
+  
+   }
+  })
+}
+
+const Submit=(()=>{
+
+
+seto((pre)=>[...pre,ok])
+})
+
+
+
 
   return (
     <div>
+<form onSubmit={Submit}>
+  <input type="text" onChange={fun} name='fname'  value={ok.fname} />
+  <input type="text" onChange={fun} name='lname'  value={ok.lname} />
+  <button type='click'>click</button>
+</form>      
 
-<input type="text"  onChange={(e)=>{setok(e.target.value)}}  value={ok}  />
-
-      <button onClick={hello}>click</button>
+<div>{o.map((Element=>Element))}</div>
     </div>
-  );
-};
+  )
+}
 
-export default GANN;
+export default GANN
