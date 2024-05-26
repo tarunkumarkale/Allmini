@@ -12,7 +12,7 @@ const [first,setfirst]=useState(name)
   console.log(name[0].name)
 
   const hello=()=>{
-   setfirst((pre))
+   setfirst((pre)=>[...pre[1],{name:'tarun',class:'7'}])
   }
 
   return (
