@@ -2,55 +2,23 @@ import React, { useState } from 'react'
 
 const GANN = () => {
 
-const obj={
-  fname:'',
-  lname:''
+
+  let name= [ 
+{name:'taun',class:'kla'},
+{name:'taun',class:'kla'},
+]
+
+const [first,setfirst]=useState(name)
+  console.log(name[0].name)
+
+  const hello=()=>{
+   setfirst((pre))
   }
-
-
-const [ok,setok]=useState(obj)
-const [o,seto]=useState([])
-
-
-const fun=(e)=>{
-  let name=e.target.name
-  let value=e.target.value
-
-  setok((pre)=>{
-   if(name==='name'){
-  return {
-    fname:value,
-  lname:pre.lname
-  }
-
-   } else {
-    return{
-      fname:pre.fname,
-      lname:value
-    }
-  
-   }
-  })
-}
-
-const Submit=(()=>{
-
-
-seto((pre)=>[...pre,ok])
-})
-
-
-
 
   return (
     <div>
-<form onSubmit={Submit}>
-  <input type="text" onChange={fun} name='fname'  value={ok.fname} />
-  <input type="text" onChange={fun} name='lname'  value={ok.lname} />
-  <button type='click'>click</button>
-</form>      
-
-<div>{o.map((Element=>Element))}</div>
+      <button onClick={hello} className='border-blue-950 bg-gray-500'> click</button>
+      {first.name}
     </div>
   )
 }
